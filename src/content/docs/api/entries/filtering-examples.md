@@ -67,4 +67,4 @@ query {
 }
 ```
 
-See the [GraphQL API](/api/graphql/) for the full reference.
+See the [Advanced Filtering](/api/entries/advanced-filtering/) page for the complete GraphQL reference.
