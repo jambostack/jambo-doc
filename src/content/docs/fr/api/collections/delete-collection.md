@@ -1,8 +1,19 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: Supprimer une collection
+description: Supprimer une collection et toutes ses entrées.
 ---
 
-## Coming Soon
+```http
+DELETE /api/projects/{projectId}/collections/{slug}
+```
 
-This page is under construction.
+:::caution
+Permanent. Toutes les entrées de la collection sont immédiatement et irréversiblement supprimées.
+:::
+
+## Codes de statut
+
+| Statut | Description |
+|--------|-------------|
+| `204` | Supprimé |
+| `404` | Collection introuvable |

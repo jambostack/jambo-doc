@@ -1,8 +1,23 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: Réordonner les collections
+description: Changer l'ordre d'affichage des collections dans la barre latérale.
 ---
 
-## Coming Soon
+```http
+POST /api/projects/{projectId}/collections/reorder
+```
 
-This page is under construction.
+## Corps de la requête
+
+```json
+{
+  "slugs": ["pages", "articles", "produits", "categories"]
+}
+```
+
+## Codes de statut
+
+| Statut | Description |
+|--------|-------------|
+| `200` | Réordonné |
+| `422` | Slugs invalides |

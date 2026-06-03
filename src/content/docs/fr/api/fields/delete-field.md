@@ -1,8 +1,19 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: Supprimer un champ
+description: Supprimer un champ d'une collection et effacer toutes ses valeurs stockées.
 ---
 
-## Coming Soon
+```http
+DELETE /api/projects/{projectId}/collections/{collectionSlug}/fields/{fieldSlug}
+```
 
-This page is under construction.
+:::caution
+Toutes les valeurs stockées dans ce champ sur toutes les entrées sont définitivement supprimées.
+:::
+
+## Codes de statut
+
+| Statut | Description |
+|--------|-------------|
+| `204` | Supprimé |
+| `404` | Champ introuvable |

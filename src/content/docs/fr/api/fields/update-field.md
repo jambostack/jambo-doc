@@ -1,8 +1,24 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: Mettre à jour un champ
+description: Mettre à jour le nom ou les options d'un champ. Le slug ne peut pas être modifié.
 ---
 
-## Coming Soon
+```http
+PATCH /api/projects/{projectId}/collections/{collectionSlug}/fields/{fieldSlug}
+```
 
-This page is under construction.
+## Corps de la requête
+
+```json
+{
+  "name": "Nouveau nom d'affichage",
+  "isRequired": true
+}
+```
+
+## Codes de statut
+
+| Statut | Description |
+|--------|-------------|
+| `200` | Mis à jour |
+| `404` | Champ introuvable |
