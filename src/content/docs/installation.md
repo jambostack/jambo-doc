@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Install Jambo API on your server in minutes.
+description: Install Jambo on your server or locally in minutes.
 ---
 
 ## Requirements
@@ -18,7 +18,7 @@ composer create-project jambostack/jambo-api my-project
 cd my-project
 ```
 
-This creates a fresh project with all dependencies installed. Skip to step 3.
+This creates a fresh project with all dependencies installed. Skip to [Configure](#configure).
 
 ## Install via Git
 
@@ -36,7 +36,7 @@ npm install && npm run build
 cp .env.example .env
 ```
 
-Edit `.env` with your database credentials and application settings, then run:
+Edit `.env` with your database credentials and application settings — see [Environment Variables](/configuration/environment-variables/) for the full reference. Then run:
 
 ```bash
 php bin/console doctrine:database:create
@@ -44,7 +44,7 @@ php bin/console doctrine:migrations:migrate
 php bin/console app:setup
 ```
 
-The `app:setup` command initializes your admin account, generates API keys, and displays your login credentials. Save them before closing the terminal.
+The `app:setup` command initializes your admin account, generates API keys, and displays your login credentials. **Save them before closing the terminal.**
 
 :::caution
 Change the default admin password immediately after first login. Click your avatar (top right) → **Settings → Security**.
@@ -62,6 +62,6 @@ Open `https://localhost:8000` and log in. Your API is ready at `https://localhos
 
 ## Next steps
 
-- [Quick Start](/guides/quick-start/) — Create your first collection
-- [Configuration](/guides/configuration/) — Environment variables reference
-- [Deployment](/guides/deployment/) — Production deployment guide
+- [Configuration](/configuration/environment-variables/) — Environment variables reference
+- [Deploy on a VPS](/deployment/vps/) — Production deployment guide
+- [Content API](/api/introduction/) — Start fetching data from your frontend

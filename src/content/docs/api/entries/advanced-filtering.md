@@ -1,27 +1,98 @@
 ---
-title: GraphQL
-description: Query your content with GraphQL.
+title: Advanced Filtering
+description: Use GraphQL for complex queries, sorting, and field-level filtering.
 ---
 
-## Endpoint
+The REST API supports basic filtering by `status` and `locale`. For complex queries, use the **GraphQL endpoint**.
+
+## GraphQL endpoint
 
 ```
-POST /api/{project-uuid}/graphql
+POST /api/projects/{projectId}/graphql
 ```
 
-## Example query
+Authentication is the same as the REST API — pass `Authorization: Bearer YOUR_TOKEN`.
+
+## Basic query
 
 ```graphql
 query {
-  articles(locale: "en", status: "published") {
-    uuid
-    title
-    slug
-    created_at
+  posts {
+    data {
+      uuid
+      fields {
+        title
+        slug
+        created_at
+      }
+    }
+    total
+    current_page
+    last_page
   }
 }
 ```
 
-## Introspection
+## Filter by field value
 
-Use any GraphQL client (Insomnia, Postman, GraphiQL) with the endpoint above to explore your schema automatically.
+```graphql
+query {
+  posts(filter: { title: { contains: "jambo" } }) {
+    data {
+      uuid
+      fields { title }
+    }
+  }
+}
+```
+
+## Sort results
+
+```graphql
+query {
+  posts(sort: [{ field: "created_at", direction: DESC }]) {
+    data {
+      uuid
+      fields { title }
+    }
+  }
+}
+```
+
+## Pagination
+
+```graphql
+query {
+  posts(page: 2, perPage: 10) {
+    data {
+      uuid
+      fields { title }
+    }
+    total
+    current_page
+    last_page
+  }
+}
+```
+
+## Available filter operators
+
+| Operator | Description |
+|----------|-------------|
+| `eq` | Equal to |
+| `neq` | Not equal to |
+| `contains` | String contains (case-insensitive) |
+| `startsWith` | String starts with |
+| `gt` / `gte` | Greater than / greater than or equal |
+| `lt` / `lte` | Less than / less than or equal |
+| `in` | Value is in array |
+| `isNull` | Field is null |
+
+## Fetch the schema
+
+```bash
+curl -X GET https://your-domain.com/api/{projectId}/graphql \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+This returns the auto-generated GraphQL schema based on your collections.
