@@ -1,7 +1,23 @@
 ---
 title: Blog NextJS
-description: A production-ready blog starter template built with Next.js and Jambo CMS.
+description: قالب مدونة جاهز للإنتاج مبني على Next.js 15 و Jambo CMS.
 ---
+
+:::note
+هذه الصفحة متاحة باللغة الإنجليزية. الترجمة العربية قيد الإعداد.
+:::
+
+قالب **Blog NextJS** هو مدونة جاهزة للإنتاج مبنية على Next.js 15 مع Jambo كـ CMS بدون رأس.
+
+## استيراد مخطط المجموعات
+
+يتضمن القالب ملف `jambo-blog-nextjs-schema.zip` (في مجلد `data/`) لإنشاء جميع المجموعات الـ 11 دفعة واحدة:
+
+1. في **لوحة التحكم** الخاصة بـ Jambo، انقر على زر **Import** (أيقونة ↑)
+2. ارفع الملف `jambo-blog-nextjs-schema.zip`
+3. اختر **إنشاء مشروع جديد** وانقر على **استيراد**
+
+للتوثيق الكامل، راجع [النسخة الإنجليزية](/templates/blog-nextjs/) أو [النسخة الفرنسية](/fr/templates/blog-nextjs/).
 
 :::note
 هذه الصفحة متاحة باللغة الإنجليزية. الترجمة العربية قيد الإعداد.

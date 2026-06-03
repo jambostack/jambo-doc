@@ -1,7 +1,23 @@
 ---
 title: Blog NextJS
-description: Un template de blog production-ready construit avec Next.js et Jambo CMS.
+description: Un starter de blog listo para producción con Next.js 15 y Jambo CMS.
 ---
+
+:::note
+Esta página está disponible en inglés. La traducción al español está en preparación.
+:::
+
+El template **Blog NextJS** es un blog listo para producción construido con Next.js 15 y Jambo como CMS headless.
+
+## Importar el esquema
+
+El archivo `jambo-blog-nextjs-schema.zip` (en la carpeta `data/` del template) permite crear las 11 colecciones de un solo golpe:
+
+1. En el **Dashboard** de Jambo, haga clic en el botón **Import** (ícono ↑)
+2. Suba `jambo-blog-nextjs-schema.zip`
+3. Elija **Crear nuevo proyecto** y haga clic en **Importar**
+
+Para la documentación completa, consulte la [versión en inglés](/templates/blog-nextjs/) o la [versión en francés](/fr/templates/blog-nextjs/).
 
 Le template **Blog NextJS** est un blog prêt pour la production construit avec Next.js 15 (App Router) et Jambo comme CMS headless.
 
