@@ -1,8 +1,15 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: الحصول على أصل
+description: استرداد ملف وسائط واحد بواسطة UUID.
 ---
 
-## Coming Soon
+```http
+GET /api/{projectId}/files/{identifier}
+```
 
-This page is under construction.
+يمكن أن يكون المعرّف `identifier` هو **UUID** أو **اسم الملف**.
+
+```bash
+curl https://your-domain.com/api/{projectId}/files/img-uuid-1234 \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```

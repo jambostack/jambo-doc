@@ -1,8 +1,12 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: تحديث حقل
+description: تحديث اسم أو خيارات حقل. لا يمكن تغيير الـ slug.
 ---
 
-## Coming Soon
+```http
+PATCH /api/projects/{projectId}/collections/{collectionSlug}/fields/{fieldSlug}
+```
 
-This page is under construction.
+```json
+{ "name": "اسم عرض جديد", "isRequired": true }
+```

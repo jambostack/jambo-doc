@@ -1,8 +1,14 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: حذف أصل
+description: حذف ملف وسائط نهائياً من مكتبة المشروع.
 ---
 
-## Coming Soon
+```http
+DELETE /api/{projectId}/files/{uuid}
+```
 
-This page is under construction.
+:::caution
+هذا الإجراء **نهائي**. يُحذف الملف من التخزين ولا يمكن استرداده.
+:::
+
+ترجع HTTP `204 No Content` عند النجاح.

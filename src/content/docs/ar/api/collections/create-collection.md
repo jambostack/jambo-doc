@@ -1,8 +1,24 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: إنشاء مجموعة
+description: إنشاء مجموعة جديدة مع حقول عبر Jambo API.
 ---
 
-## Coming Soon
+```http
+POST /api/projects/{projectId}/collections
+```
 
-This page is under construction.
+```json
+{
+  "name": "Products",
+  "slug": "products",
+  "isSingleton": false,
+  "fields": [
+    { "name": "Name", "slug": "name", "type": "text", "isRequired": true }
+  ]
+}
+```
+
+| الحالة | الوصف |
+|--------|-------|
+| `201` | تم الإنشاء |
+| `409` | يوجد مجموعة بهذا الـ slug |

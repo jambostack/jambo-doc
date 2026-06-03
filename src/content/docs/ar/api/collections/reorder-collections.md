@@ -1,8 +1,12 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: إعادة ترتيب المجموعات
+description: تغيير ترتيب عرض المجموعات في الشريط الجانبي.
 ---
 
-## Coming Soon
+```http
+POST /api/projects/{projectId}/collections/reorder
+```
 
-This page is under construction.
+```json
+{ "slugs": ["pages", "posts", "products", "categories"] }
+```

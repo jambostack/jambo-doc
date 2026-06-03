@@ -1,8 +1,12 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: تحديث مجموعة
+description: تحديث اسم أو وصف مجموعة موجودة.
 ---
 
-## Coming Soon
+```http
+PATCH /api/projects/{projectId}/collections/{slug}
+```
 
-This page is under construction.
+```json
+{ "name": "اسم جديد", "description": "وصف جديد" }
+```

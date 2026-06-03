@@ -1,8 +1,12 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: إعادة ترتيب الحقول
+description: تغيير ترتيب عرض الحقول في محرر المحتوى.
 ---
 
-## Coming Soon
+```http
+POST /api/projects/{projectId}/collections/{slug}/fields/reorder
+```
 
-This page is under construction.
+```json
+{ "slugs": ["title", "featured_image", "body", "author"] }
+```

@@ -1,8 +1,14 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: حذف مجموعة
+description: حذف مجموعة وجميع إدخالاتها.
 ---
 
-## Coming Soon
+```http
+DELETE /api/projects/{projectId}/collections/{slug}
+```
 
-This page is under construction.
+:::caution
+هذا الإجراء دائم. تُحذف جميع إدخالات المجموعة فوراً وبشكل لا رجعة فيه.
+:::
+
+ترجع HTTP `204 No Content` عند النجاح.

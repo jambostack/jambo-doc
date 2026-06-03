@@ -1,8 +1,16 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: رفع أصل
+description: رفع ملف إلى مكتبة وسائط المشروع.
 ---
 
-## Coming Soon
+```http
+POST /api/{projectId}/files
+```
 
-This page is under construction.
+```bash
+curl -X POST https://your-domain.com/api/{projectId}/files \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -F "file=@/path/to/image.jpg"
+```
+
+ترجع HTTP `201 Created` عند النجاح مع بيانات الأصل المرفوع.

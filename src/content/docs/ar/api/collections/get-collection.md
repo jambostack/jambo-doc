@@ -1,8 +1,13 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: الحصول على مجموعة
+description: استرداد مجموعة واحدة بواسطة slug.
 ---
 
-## Coming Soon
+```http
+GET /api/{projectId}/collections/{slug}
+```
 
-This page is under construction.
+```bash
+curl https://your-domain.com/api/{projectId}/collections/posts \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```

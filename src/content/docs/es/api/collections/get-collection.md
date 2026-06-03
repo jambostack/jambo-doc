@@ -1,8 +1,22 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: Obtenir une colección
+description: Récupérer une seule colección par son slug.
 ---
 
-## Coming Soon
+```http
+GET /api/{projectId}/coleccións/{slug}
+```
 
-This page is under construction.
+## Solicitud
+
+```bash
+curl https://votre-domaine.com/api/{projectId}/coleccións/articles \
+  -H "Authorization: Bearer VOTRE_TOKEN_API"
+```
+
+## Códigos de estado
+
+| Estado | Descripción |
+|--------|-------------|
+| `200` | Éxito |
+| `404` | Colección no encontrado |

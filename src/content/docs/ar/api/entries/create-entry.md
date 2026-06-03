@@ -1,8 +1,30 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: إنشاء إدخال
+description: إنشاء إدخال محتوى جديد في مجموعة.
 ---
 
-## Coming Soon
+```http
+POST /api/{projectId}/{collectionSlug}
+```
 
-This page is under construction.
+## جسم الطلب
+
+```json
+{
+  "status": "published",
+  "locale": "ar",
+  "fields": {
+    "title": "مقالتي الجديدة",
+    "slug": "my-new-article"
+  }
+}
+```
+
+## رموز الحالة
+
+| الحالة | الوصف |
+|--------|-------|
+| `201` | تم الإنشاء بنجاح |
+| `403` | صلاحيات غير كافية |
+| `404` | المجموعة غير موجودة |
+| `422` | قيم غير صالحة |

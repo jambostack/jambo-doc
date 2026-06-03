@@ -1,8 +1,12 @@
 ---
-title: "Coming Soon"
-description: "This page is under construction."
+title: حذف حقل
+description: إزالة حقل من مجموعة وحذف جميع قيمه المخزنة.
 ---
 
-## Coming Soon
+```http
+DELETE /api/projects/{projectId}/collections/{collectionSlug}/fields/{fieldSlug}
+```
 
-This page is under construction.
+:::caution
+تُحذف جميع القيم المخزنة في هذا الحقل عبر جميع الإدخالات بشكل نهائي.
+:::
