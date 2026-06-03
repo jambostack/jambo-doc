@@ -1,8 +1,27 @@
 ---
-title: "Reorder Collections"
-description: "Change the order of collections."
+title: Reorder Collections
+description: Change the display order of collections in the sidebar.
 ---
 
-## Coming Soon
+Updates the display order of collections in the admin sidebar.
 
-This page is under construction.
+```http
+POST /api/projects/{projectId}/collections/reorder
+```
+
+## Request body
+
+Pass an array of collection slugs in the desired order:
+
+```json
+{
+  "slugs": ["pages", "posts", "products", "categories"]
+}
+```
+
+## Status codes
+
+| Status | Description |
+|--------|-------------|
+| `200` | Reordered |
+| `422` | Invalid slugs |
