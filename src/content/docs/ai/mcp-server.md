@@ -1,44 +1,63 @@
 ---
 title: MCP Server
-description: Connect AI agents directly to your Jambo API via Model Context Protocol.
+description: Expose your Jambo project as an MCP server for AI agents and Claude.
 ---
+
+Jambo includes a built-in **MCP (Model Context Protocol) server** that exposes your project's content and collections as tools for AI agents. This lets Claude, Cursor, or any MCP-compatible client interact directly with your CMS.
 
 ## What is MCP?
 
-Model Context Protocol (MCP) lets AI agents (Claude, Cursor, custom agents) interact directly with your CMS — read content, create entries, manage schema — without writing custom integrations.
+MCP is an open protocol that lets AI models call tools to read and write data in external systems. When you enable the Jambo MCP server, AI agents can:
 
-## Endpoint
+- List and read your collections and entries
+- Create, update, and delete content
+- Upload files to the media library
+- Query your GraphQL API
 
-```
-https://your-domain.com/mcp
-```
+## Enabling the MCP server
 
-## Tool categories
+1. Go to **Project Settings → MCP Server**
+2. Toggle **Enable MCP Server**
+3. Copy the generated MCP endpoint URL and API key
 
-| Category | Description |
-|---|---|
-| **Exploration** | Browse projects, collections, schema |
-| **Content** | List, create, update, delete entries |
-| **Schema** | Manage collections and fields |
-| **Media** | Upload and query assets |
-| **End Users** | Manage front-end users |
-| **AI Tools** | Content generation, search, versioning |
+## Connecting to Claude Desktop
 
-## Connect Claude Desktop
-
-Add to your `claude_desktop_config.json`:
+Add the following to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "jambo": {
-      "url": "https://your-domain.com/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_MCP_TOKEN"
+      "command": "npx",
+      "args": ["-y", "@jambostack/mcp-client"],
+      "env": {
+        "JAMBO_URL": "https://your-domain.com",
+        "JAMBO_PROJECT": "your-project-uuid",
+        "JAMBO_TOKEN": "your-api-token"
       }
     }
   }
 }
 ```
 
-Create an MCP token in **Project → Settings → MCP Access**.
+## Available tools
+
+Once connected, the AI has access to these tools:
+
+| Tool | Description |
+|------|-------------|
+| `list_collections` | Get all collections and their field schemas |
+| `list_entries` | Fetch entries from a collection with filters |
+| `get_entry` | Get a single entry by UUID |
+| `create_entry` | Create a new content entry |
+| `update_entry` | Update an existing entry |
+| `delete_entry` | Soft-delete an entry |
+| `upload_file` | Upload a file to the media library |
+| `graphql_query` | Run a GraphQL query |
+
+## Use cases
+
+- **AI content generation** — ask Claude to write and publish blog posts directly
+- **Data import** — "Here's a CSV of 50 products, create entries for all of them"
+- **Content audits** — "List all draft posts older than 30 days"
+- **Bulk updates** — "Update the status of all posts in the 'news' category to published"
