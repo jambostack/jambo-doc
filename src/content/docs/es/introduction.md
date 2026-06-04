@@ -5,6 +5,12 @@ description: Jambo est un CMS headless open-source construit avec Symfony 8 et P
 
 Jambo est un **CMS headless** open-source construit avec Symfony 8 et PHP 8.4. Il expose votre contenu via une API REST et un endpoint GraphQL, avec des outils IA intégrés pour concevoir des schémas, générer du contenu et traduire des entradas automatiquement.
 
+:::tip[Demo en vivo disponible]
+Explora Jambo sin instalar nada — hay una demo alojada en **[demo.jambostack.site](https://demo.jambostack.site)**.
+
+Inicia sesión con `demo@demo.jambostack.site` / `demo1234` (HTTP Basic Auth primero: `demo` / `jambo2026`).
+:::
+
 ## Características principales
 
 - **API REST & GraphQL** — générées automatiquement depuis vos coleccións, avec filtres, pagination et support multi-idioma
