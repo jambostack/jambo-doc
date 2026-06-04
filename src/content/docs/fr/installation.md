@@ -44,10 +44,21 @@ php bin/console doctrine:migrations:migrate
 php bin/console app:setup
 ```
 
-La commande `app:setup` initialise votre compte administrateur, génère les clés API et affiche vos identifiants de connexion. Conservez-les avant de fermer le terminal.
+La commande `app:setup` crée le compte administrateur et affiche les identifiants. Valeurs par défaut :
+
+| Champ        | Valeur par défaut           |
+|--------------|-----------------------------|
+| Email        | `admin@jambostack.site`     |
+| Mot de passe | `admin1234`                 |
+
+Vous pouvez les personnaliser :
+
+```bash
+php bin/console app:setup --email="vous@exemple.com" --password="MotDePasseFort123"
+```
 
 :::caution
-Changez le mot de passe administrateur par défaut immédiatement après la première connexion. Cliquez sur votre avatar (en haut à droite) → **Paramètres → Sécurité**.
+Changez le mot de passe immédiatement après la première connexion : avatar (en haut à droite) → **Paramètres → Sécurité**.
 :::
 
 ## Vérifier

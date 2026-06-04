@@ -44,10 +44,21 @@ php bin/console doctrine:migrations:migrate
 php bin/console app:setup
 ```
 
-The `app:setup` command initializes your admin account, generates API keys, and displays your login credentials. **Save them before closing the terminal.**
+The `app:setup` command creates the admin account and prints the credentials. Default values:
+
+| Field    | Default                    |
+|----------|----------------------------|
+| Email    | `admin@jambostack.site`    |
+| Password | `admin1234`                |
+
+You can override them:
+
+```bash
+php bin/console app:setup --email="you@example.com" --password="StrongPassword123"
+```
 
 :::caution
-Change the default admin password immediately after first login. Click your avatar (top right) → **Settings → Security**.
+Change the password immediately after first login: avatar (top right) → **Settings → Security**.
 :::
 
 ## Verify
