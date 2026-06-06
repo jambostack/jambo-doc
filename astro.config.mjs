@@ -135,7 +135,11 @@ export default defineConfig({
             {
               label: 'Project',
               translations: { fr: 'Projet', es: 'Proyecto', ar: 'المشروع' },
-              items: [{ slug: 'api/project/get-project' }],
+              items: [
+                { slug: 'api/project/get-project' },
+                { slug: 'api/project/settings-mailer' },
+                { slug: 'api/project/settings-jwt-ttl' },
+              ],
             },
             {
               label: 'Collections',
