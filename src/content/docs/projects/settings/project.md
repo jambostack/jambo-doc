@@ -10,10 +10,24 @@ Access project settings via the project sidebar → **Settings → Project**.
 | Setting | Description |
 |---------|-------------|
 | **Name** | Project display name |
-| **Slug** | URL-safe identifier (changing this breaks existing API calls) |
 | **Description** | Optional description |
 | **Default locale** | The primary language used when no locale is specified in API calls |
-| **Status** | Active or archived |
+| **Storage** | Local disk (`public`) or S3-compatible storage |
+
+## JWT Token TTL
+
+Configure the expiration time for end-user authentication tokens:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Access Token TTL** | 900s (15 min) | Lifetime of access tokens in seconds. Min: 60. Leave empty for default. |
+| **Refresh Token TTL** | 2,592,000s (30 days) | Lifetime of refresh tokens in seconds. Min: 60. Leave empty for default. |
+
+These settings apply to tokens issued via `POST /api/{projectId}/auth/login`. Changing the TTL only affects **new tokens** — existing tokens retain their original expiration.
+
+## SMTP Mailer
+
+Each project can have its own SMTP configuration. See the **SMTP Mailer** section in project settings for configuration.
 
 ## Danger zone
 
