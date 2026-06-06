@@ -1,32 +1,41 @@
 ---
-title: Project Settings
-description: Configure general project settings in Jambo.
+title: إعدادات المشروع
+description: تكوين الإعدادات العامة للمشروع في Jambo.
 ---
 
-:::note
-هذه الصفحة متاحة باللغة الإنجليزية. الترجمة العربية قيد الإعداد.
-:::
+يمكنك الوصول إلى إعدادات المشروع من الشريط الجانبي → **الإعدادات → المشروع**.
 
+## عام
 
-Access project settings via the project sidebar → **Settings → Project**.
-
-## General
-
-| Setting | Description |
+| الإعداد | الوصف |
 |---------|-------------|
-| **Name** | Project display name |
-| **Slug** | URL-safe identifier (changing this breaks existing API calls) |
-| **Description** | Optional description |
-| **Default locale** | The primary language used when no locale is specified in API calls |
-| **Status** | Active or archived |
+| **الاسم** | اسم عرض المشروع |
+| **الوصف** | وصف اختياري |
+| **اللغة الافتراضية** | اللغة الأساسية المستخدمة عند عدم تحديد لغة في طلبات API |
+| **التخزين** | قرص محلي (`public`) أو تخزين متوافق مع S3 |
 
-## Danger zone
+## مدة صلاحية رموز JWT
 
-| Action | Description |
+قم بتكوين وقت انتهاء صلاحية رموز المصادقة:
+
+| الإعداد | الافتراضي | الوصف |
+|---------|-----------|-------------|
+| **Access Token TTL** | 900 ثانية (15 دقيقة) | مدة صلاحية رمز الوصول بالثواني. الحد الأدنى: 60. اتركه فارغاً للقيمة الافتراضية. |
+| **Refresh Token TTL** | 2,592,000 ثانية (30 يوماً) | مدة صلاحية رمز التحديث بالثواني. الحد الأدنى: 60. اتركه فارغاً للقيمة الافتراضية. |
+
+تنطبق هذه الإعدادات على الرموز الصادرة عبر `POST /api/{projectId}/auth/login`. تغيير TTL يؤثر فقط على **الرموز الجديدة**.
+
+## SMTP البريد
+
+يمكن لكل مشروع أن يكون له تكوين SMTP الخاص به. راجع قسم **SMTP Mailer** في إعدادات المشروع.
+
+## منطقة الخطر
+
+| الإجراء | الوصف |
 |--------|-------------|
-| **Archive project** | Hides the project from the dashboard; API continues to work |
-| **Delete project** | Permanently deletes the project, all collections, entries, and media files |
+| **أرشفة المشروع** | يخفي المشروع من لوحة التحكم؛ تستمر API في العمل |
+| **حذف المشروع** | يحذف المشروع بشكل دائم مع جميع المجموعات والمدخلات وملفات الوسائط |
 
 :::caution
-Deleting a project is irreversible. All data is permanently removed.
+حذف المشروع لا رجعة فيه. يتم حذف جميع البيانات بشكل دائم.
 :::
