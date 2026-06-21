@@ -10,8 +10,8 @@ export default defineConfig({
     starlight({
       title: 'Jambo Docs',
       logo: {
-        light: './src/assets/logo-light.svg',
-        dark: './src/assets/logo-dark.svg',
+        light: './src/assets/logo-light.png',
+        dark: './src/assets/logo-dark.png',
         replacesTitle: true,
       },
       social: [
