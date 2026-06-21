@@ -20,7 +20,7 @@ export default defineConfig({
       defaultLocale: 'root',
       customCss: ['./src/styles/global.css'],
       sidebar: [
-        { slug: 'index' },
+        { slug: 'introduction' },
         {
           label: 'Getting Started',
           items: [
