@@ -3,6 +3,8 @@ title: Schema Builder
 description: Visual builder for collections, fields, validation, end-user fields, and code export in JamboApi Studio.
 ---
 
+![Schema Builder](../../../assets/screenshots/schema-builder.png)
+
 The Schema Builder is a visual, drag-and-drop interface for designing your content model. It lives under **Project Settings > Studio** and provides a complete environment for managing collections, fields, validation rules, workflow configurations, and end-user fields.
 
 ## Studio Layout

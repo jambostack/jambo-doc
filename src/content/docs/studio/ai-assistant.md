@@ -3,6 +3,8 @@ title: AI Assistant
 description: AI-powered content generation, translation, summarization, and SEO optimization with 11 provider support.
 ---
 
+![AI Assistant](../../../assets/screenshots/ai-assistant.png)
+
 The JamboApi AI Assistant brings artificial intelligence directly into your content workflow. Accessible from the content entry editor toolbar, it offers one-click content generation, translation, summarization, and SEO optimization.
 
 ## Provider Architecture

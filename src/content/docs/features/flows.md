@@ -3,6 +3,8 @@ title: Flows (Automations)
 description: Visual DAG-based automation engine with 46 node handlers across 9 categories.
 ---
 
+![Flow Builder](../../../assets/screenshots/flow-builder.png)
+
 The Flows feature (also called Automations at the database level) lets you build visual directed-acyclic-graph (DAG) automation pipelines. Each flow is composed of nodes connected by edges, executed topologically by the flow interpreter.
 
 ## Architecture

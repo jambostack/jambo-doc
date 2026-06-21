@@ -5,6 +5,8 @@ description: Content entries — CRUD, versioning, draft/published workflow, sch
 
 ## Overview
 
+![Content List](../../../assets/screenshots/content-list.png)
+
 A **Content Entry** is an instance of a Collection. Each entry stores field values in an EAV structure and carries metadata such as status, locale, timestamps, and user assignments.
 
 The `ContentEntry` entity (`src/Entity/ContentEntry.php`) represents a single piece of content.

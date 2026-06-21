@@ -184,6 +184,8 @@ Each tool call is wrapped in a try-catch. Execution errors are:
 
 ## Studio AI Chat Interface
 
+![AI Agent](../../../assets/screenshots/ai-agent.png)
+
 The AI Agent is accessed through the Studio AI chat panel, which supports multiple modes:
 
 | Mode | Description |

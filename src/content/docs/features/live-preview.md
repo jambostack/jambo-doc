@@ -3,6 +3,8 @@ title: Live Preview
 description: Real-time content preview with JWT tokens, postMessage iframe communication, and visual editing.
 ---
 
+![Live Preview](../../../assets/screenshots/live-preview.png)
+
 The Live Preview system lets content editors preview entries in their frontend application context before publishing. It combines JWT-based authentication, iframe + postMessage communication, and visual in-context editing.
 
 ## Architecture

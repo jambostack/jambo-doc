@@ -5,6 +5,8 @@ description: Project management, navigation, import/export, and user administrat
 
 The Studio Dashboard is the main landing page after login. It provides a card-based overview of all your projects, quick access to create or import projects, and navigation to project-specific features.
 
+![Dashboard](../../../assets/screenshots/dashboard.png)
+
 ## Project List
 
 The dashboard displays all projects in a responsive card grid. Each project card shows:

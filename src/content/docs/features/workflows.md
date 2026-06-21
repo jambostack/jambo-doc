@@ -5,6 +5,8 @@ description: Custom content statuses, transitions, assignments, and the publishi
 
 ## Overview
 
+![Workflows](../../../assets/screenshots/workflows.png)
+
 Jambo's workflow system allows you to define **custom statuses** for each collection. Statuses control the editorial lifecycle — from draft through review to publication — and determine whether entries are publicly accessible.
 
 Workflows are configured as **JSON embedded in the Collection** entity's `settings` field.

@@ -5,7 +5,9 @@ description: File uploads, folders, TUS resumable upload, image transformations,
 
 ## Overview
 
-Jambo's media system handles file storage, organization, and delivery. It supports three upload paths, folder organization, on-the-fly image transformations, and multi-storage mirroring (local + S3-compatible).
+![Media Library](../../../assets/screenshots/media-library.png)
+
+Jambo.s media system handles file storage, organization, and delivery. It supports three upload paths, folder organization, on-the-fly image transformations, and multi-storage mirroring (local + S3-compatible).
 
 ## The Media entity
 
