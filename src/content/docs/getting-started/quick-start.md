@@ -14,7 +14,7 @@ A running Jambo instance (see [Installation](./installation/)) with an admin acc
 Projects are isolated workspaces. Each project has its own collections, entries, media library, API tokens, and access control.
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/projects" \
+curl -X POST "https://your-domain.com/api/projects" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -43,7 +43,7 @@ The returned `uuid` identifies your project in all subsequent API calls.
 Collections define a content type. Each collection has a unique slug and a set of fields.
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -58,7 +58,7 @@ curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections" \
 Fields define the shape of your content. Available types include `text`, `number`, `boolean`, `date`, `datetime`, `json`, `media`, and `relation`.
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/fields" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/articles/fields" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -72,12 +72,12 @@ curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/
 Add a few more:
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/fields" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/articles/fields" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"name": "Body", "slug": "body", "type": "json"}'
 
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/fields" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/articles/fields" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"name": "Published", "slug": "published", "type": "boolean"}'
@@ -88,7 +88,7 @@ curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/
 Entries are the actual content objects. Field values are sent as a flat JSON object keyed by field slug.
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/entries" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/articles/entries" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -126,13 +126,13 @@ Response:
 List entries:
 
 ```bash
-curl "https://jamboapicms.test/api/{uuid}/articles?locale=en&status=published"
+curl "https://your-domain.com/api/{uuid}/articles?locale=en&status=published"
 ```
 
 Get a single entry by UUID:
 
 ```bash
-curl "https://jamboapicms.test/api/{uuid}/articles/550e8400-e29b-41d4-a716-446655440000"
+curl "https://your-domain.com/api/{uuid}/articles/550e8400-e29b-41d4-a716-446655440000"
 ```
 
 ### Public API (read-only)
@@ -140,8 +140,8 @@ curl "https://jamboapicms.test/api/{uuid}/articles/550e8400-e29b-41d4-a716-44665
 If the project has the public API enabled, collections and content are available without authentication:
 
 ```bash
-curl "https://jamboapicms.test/public-api/collections"
-curl "https://jamboapicms.test/public-api/collections/articles"
+curl "https://your-domain.com/public-api/collections"
+curl "https://your-domain.com/public-api/collections/articles"
 ```
 
 ### GraphQL
@@ -160,7 +160,7 @@ query {
 ```
 
 ```bash
-curl -X POST "https://jamboapicms.test/api/{uuid}/graphql" \
+curl -X POST "https://your-domain.com/api/{uuid}/graphql" \
   -H "Content-Type: application/json" \
   -d '{"query": "{ articles(locale: \"en\", status: \"published\") { items { title: fieldValue(slug: \"title\") } } }"}'
 ```

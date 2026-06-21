@@ -47,7 +47,7 @@ Key variables to set:
 | `APP_SECRET` | 64-char hex Symfony app secret | (auto-generated) |
 | `DATABASE_URL` | MySQL DSN | `mysql://root:@127.0.0.1:3306/jamboapicms` |
 | `MAILER_DSN` | SMTP DSN for transactional emails | `null://null` |
-| `APP_HOSTNAME` | Public hostname | `jamboapicms.test` |
+| `APP_HOSTNAME` | Public hostname | `your-domain.com` |
 | `ANTHROPIC_API_KEY` | API key for Claude AI features | (optional) |
 | `OPENAI_API_KEY` | API key for OpenAI features | (optional) |
 | `MEILISEARCH_HOST` | Meilisearch server URL | `http://localhost:7700` |
@@ -87,7 +87,7 @@ php -S localhost:8000 -t public/
 ```nginx
 server {
     listen 80;
-    server_name jamboapicms.test;
+    server_name your-domain.com;
     root /path/to/jambo-api/public;
 
     location / {

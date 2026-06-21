@@ -35,7 +35,7 @@ services:
       MERCURE_PUBLISHER_JWT_KEY: '%env(MERCURE_JWT_SECRET)%'
       MERCURE_SUBSCRIBER_JWT_KEY: '%env(MERCURE_JWT_SECRET)%'
       MERCURE_EXTRA_DIRECTIVES: |
-        cors_origins http://jamboapicms.test http://localhost:8000
+        cors_origins http://your-domain.com http://localhost:8000
     command: /usr/bin/caddy run --config /etc/caddy/dev.Caddyfile
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/healthz"]
@@ -83,7 +83,7 @@ The Mercure hub listens on port 8080 internally. Key environment variables:
 |---|---|---|
 | `MERCURE_JWT_SECRET` | Signing key for publisher/subscriber JWTs | Required |
 | `MERCURE_URL` | Internal URL used by the PHP app | `http://127.0.0.1:8080/.well-known/mercure` |
-| `MERCURE_PUBLIC_URL` | Public URL sent to browsers | `http://jamboapicms.test/.well-known/mercure` |
+| `MERCURE_PUBLIC_URL` | Public URL sent to browsers | `http://your-domain.com/.well-known/mercure` |
 
 ### CORS Configuration
 

@@ -21,11 +21,11 @@ Projects are identified by a UUID v4. All content-related API calls include the 
 
 ```bash
 # List your projects
-curl "https://jamboapicms.test/api/projects" \
+curl "https://your-domain.com/api/projects" \
   -H "Authorization: Bearer <admin-jwt>"
 
 # Create a new project
-curl -X POST "https://jamboapicms.test/api/projects" \
+curl -X POST "https://your-domain.com/api/projects" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"name": "My Blog", "defaultLocale": "en"}'
@@ -45,10 +45,10 @@ A **collection** is a content type definition — analogous to a database table.
 
 ```bash
 # List collections
-curl "https://jamboapicms.test/api/projects/{uuid}/collections"
+curl "https://your-domain.com/api/projects/{uuid}/collections"
 
 # Create a singleton collection
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"name": "Site Settings", "slug": "site-settings", "isSingleton": true}'
@@ -78,13 +78,13 @@ Fields can be:
 
 ```bash
 # Add a field
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/{slug}/fields" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/{slug}/fields" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"name": "Author", "slug": "author", "type": "text", "isRequired": true}'
 
 # Reorder fields
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/{slug}/fields/reorder" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/{slug}/fields/reorder" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"order": ["title", "author", "body"]}'
@@ -106,7 +106,7 @@ An **entry** is a single content object within a collection. Each entry:
 
 ```bash
 # Create an entry
-curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/entries" \
+curl -X POST "https://your-domain.com/api/projects/{uuid}/collections/articles/entries" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -119,7 +119,7 @@ curl -X POST "https://jamboapicms.test/api/projects/{uuid}/collections/articles/
   }'
 
 # Update status to published
-curl -X PATCH "https://jamboapicms.test/api/projects/{uuid}/collections/articles/entries/{entryUuid}" \
+curl -X PATCH "https://your-domain.com/api/projects/{uuid}/collections/articles/entries/{entryUuid}" \
   -H "Authorization: Bearer <admin-jwt>" \
   -H "Content-Type: application/json" \
   -d '{"status": "published"}'

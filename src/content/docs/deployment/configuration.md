@@ -151,6 +151,6 @@ DEEPSEEK_API_KEY=
 
 # ─── Mercure (real-time updates) ──────────────────────────────────────
 MERCURE_URL=http://127.0.0.1:8080/.well-known/mercure
-MERCURE_PUBLIC_URL=http://jamboapicms.test/.well-known/mercure
+MERCURE_PUBLIC_URL=http://your-domain.com/.well-known/mercure
 MERCURE_JWT_SECRET=change-me-strong-secret
 ```
