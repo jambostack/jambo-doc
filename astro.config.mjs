@@ -53,6 +53,7 @@ export default defineConfig({
           items: [
             { slug: 'api/overview' },
             { slug: 'api/rest' },
+            { slug: 'api/admin' },
             { slug: 'api/graphql' },
             { slug: 'api/mcp' },
           ],
@@ -80,6 +81,7 @@ export default defineConfig({
         {
           label: 'Guides',
           items: [
+            { slug: 'guides/cli' },
             { slug: 'guides/sdk-live-preview' },
             { slug: 'guides/customizing' },
             { slug: 'guides/export-import' },
